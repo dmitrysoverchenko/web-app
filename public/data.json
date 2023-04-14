@@ -1,0 +1,101 @@
+[
+  {
+    "type": "Credit",
+    "amount": "499.43",
+    "transactionName": "Apple",
+    "description": "Neque porro quisquam est",
+    "date": "04/14/2023",
+    "pending": true,
+    "authorizedUser": "John",
+    "tax": "2",
+    "id": "1"
+  },
+  {
+    "type": "Payment",
+    "amount": "793.57",
+    "transactionName": "Payment",
+    "description": "At vero eos et accusamus et",
+    "date": "04/13/2023",
+    "pending": false,
+    "id": "2"
+  },
+  {
+    "type": "Credit",
+    "amount": "1293.52",
+    "transactionName": "METRO",
+    "description": "But in certain circumstances and owing to the claims of duty",
+    "date": "04/11/2023",
+    "pending": false,
+    "tax": "2",
+    "id": "3"
+  },
+  {
+    "type": "Credit",
+    "amount": "3.55",
+    "transactionName": "Lifecell",
+    "description": "Nor again is there anyone who loves or pursues ",
+    "date": "04/10/2023",
+    "pending": false,
+    "authorizedUser": "Jessica",
+    "tax": "3",
+    "id": "4"
+  },
+  {
+    "type": "Credit",
+    "amount": "79.11",
+    "transactionName": "Pharmacy",
+    "description": "Nor again is there anyone who loves or pursues or desires",
+    "date": "04/7/2023",
+    "pending": false,
+    "tax": "3",
+    "id": "5"
+  },
+  {
+    "type": "Payment",
+    "amount": "23.72",
+    "transactionName": "Payment",
+    "description": "Et harum quidem rerum facilis est et expedita distinctio",
+    "date": "04/03/2023",
+    "pending": false,
+    "id": "6"
+  },
+  {
+    "type": "Payment",
+    "amount": "233.55",
+    "transactionName": "Payment",
+    "description": "Quis autem vel eum iure",
+    "date": "04/02/2023",
+    "pending": false,
+    "id": "7"
+  },
+  {
+    "type": "Credit",
+    "amount": "1002.00",
+    "transactionName": "Samsung",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+    "date": "04/02/2023",
+    "pending": false,
+    "authorizedUser": "John",
+    "tax": "3",
+    "id": "8"
+  },
+  {
+    "type": "Credit",
+    "amount": "7.55",
+    "transactionName": "METRO",
+    "description": "But I must explain to you",
+    "date": "04/01/2023",
+    "pending": false,
+    "tax": "2",
+    "id": "9"
+  },
+  {
+    "type": "Payment",
+    "amount": "2443.29",
+    "transactionName": "Payment",
+    "description": "On the other hand",
+    "date": "04/01/2023",
+    "pending": false,
+    "id": "10"
+  }
+]

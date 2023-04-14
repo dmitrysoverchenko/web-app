@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TransactionList from "./Pages/TransactionsList";
+import TransactionDetail from "./Pages/TransactionDetail";
 
 function App() {
+  const [isTransactionDetailOpen, setIsTransactionDetailOpen] = useState(false);
+  const [selectedTransaction, setSelectedTransaction] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {isTransactionDetailOpen ? (
+        <TransactionDetail
+          isTransactionDetailOpen={isTransactionDetailOpen}
+          setIsTransactionDetailOpen={setIsTransactionDetailOpen}
+          selectedTransaction={selectedTransaction}
+        />
+      ) : (
+        <TransactionList
+          isTransactionDetailOpen={isTransactionDetailOpen}
+          setIsTransactionDetailOpen={setIsTransactionDetailOpen}
+          selectedTransaction={selectedTransaction}
+          setSelectedTransaction={setSelectedTransaction}
+        />
+      )}
+    </>
   );
 }
 
