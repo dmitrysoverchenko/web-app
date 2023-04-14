@@ -10,3 +10,7 @@ export const transactionTypePayment = "Payment";
 export const transactionTypeCredit = "Credit";
 
 export const pendingStatus = "Pending";
+export const ApprovedStatus = "Approved";
+
+export const status = "Status";
+export const total = "Total";

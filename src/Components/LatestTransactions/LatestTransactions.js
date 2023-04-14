@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { StyledTitle, StyledColumnContainer } from "../Styles";
-import { transactions, transactionTypePayment } from "../../constants";
+import { transactions } from "../../constants";
 import Transaction from "../Transaction";
 
 const LatestTransactions = ({
@@ -43,7 +43,7 @@ const LatestTransactions = ({
           transactionName={transaction.transactionName}
           description={transaction.description}
           date={transaction.date}
-          pending={transaction.pending}
+          status={transaction.status}
           authorizedUser={transaction.authorizedUser}
           tax={transaction.tax}
           onClick={() => handleTransactionClick(transaction)}

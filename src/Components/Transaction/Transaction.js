@@ -17,7 +17,7 @@ const Transaction = ({
   transactionName,
   description,
   date,
-  pending = false,
+  status,
   authorizedUser = null,
   tax = null,
   onClick,
@@ -29,6 +29,8 @@ const Transaction = ({
 
   const styledDescription =
     description?.length > 30 ? description.slice(0, 27) + "..." : description;
+
+    const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
 
   return (
     <StyledRowContainer
@@ -53,7 +55,7 @@ const Transaction = ({
         <FontAwesomeIcon
           icon={faImage}
           size="3x"
-          style={{ color: "#ffffff" }}
+          style={{ color: randomColor}}
         />
       </StyledBox>
       <StyledColumnContainer disableGutters style={{ padding: "0" }}>
@@ -83,7 +85,7 @@ const Transaction = ({
           }}
         >
           <StyledSpan style={{ fontSize: "14px" }}>
-            {pending
+            {status === pendingStatus
               ? `${pendingStatus} - ${styledDescription.slice(0, 17) + "..."}`
               : styledDescription}
           </StyledSpan>
