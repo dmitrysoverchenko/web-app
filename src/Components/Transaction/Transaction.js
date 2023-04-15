@@ -8,8 +8,13 @@ import {
   StyledColumnContainer,
   StyledRowContainer,
 } from "../Styles";
-import { transactionTypePayment, pendingStatus } from "../../constants";
-import { getTransactionDateForRender } from "../../utils";
+import {
+  transactionTypePayment,
+  pendingStatus,
+  maxLengthForDescription,
+  maxLengthForDescriptionWithStatus,
+} from "../../constants";
+import { getTransactionDateForRender, getRandomColor } from "../../utils";
 
 const Transaction = ({
   type,
@@ -22,15 +27,16 @@ const Transaction = ({
   tax = null,
   onClick,
 }) => {
-
   const handleClick = () => {
     onClick();
   };
 
   const styledDescription =
-    description?.length > 30 ? description.slice(0, 27) + "..." : description;
+    description?.length > 30
+      ? description.slice(0, maxLengthForDescription) + "..."
+      : description;
 
-    const randomColor = `#${Math.floor(Math.random()*16777215).toString(16)}`;
+  const randomColor = getRandomColor();
 
   return (
     <StyledRowContainer
@@ -55,7 +61,7 @@ const Transaction = ({
         <FontAwesomeIcon
           icon={faImage}
           size="3x"
-          style={{ color: randomColor}}
+          style={{ color: randomColor }}
         />
       </StyledBox>
       <StyledColumnContainer disableGutters style={{ padding: "0" }}>
@@ -86,19 +92,26 @@ const Transaction = ({
         >
           <StyledSpan style={{ fontSize: "14px" }}>
             {status === pendingStatus
-              ? `${pendingStatus} - ${styledDescription.slice(0, 17) + "..."}`
+              ? `${pendingStatus} - ${
+                  styledDescription.slice(
+                    0,
+                    maxLengthForDescriptionWithStatus
+                  ) + "..."
+                }`
               : styledDescription}
           </StyledSpan>
-          {tax && <StyledSpan
-            style={{
-              background: "#ededed",
-              borderRadius: "7px",
-              textAlign: "center",
-              width: "10%",
-            }}
-          >
-            {tax}%
-          </StyledSpan>}
+          {tax && (
+            <StyledSpan
+              style={{
+                background: "#ededed",
+                borderRadius: "7px",
+                textAlign: "center",
+                width: "10%",
+              }}
+            >
+              {tax}%
+            </StyledSpan>
+          )}
         </StyledRowContainer>
         <StyledRowContainer
           disableGutters
@@ -110,7 +123,9 @@ const Transaction = ({
           }}
         >
           <StyledSpan style={{ fontSize: "14px" }}>
-            {authorizedUser ? `${authorizedUser} - ${getTransactionDateForRender(date)}` : getTransactionDateForRender(date)}
+            {authorizedUser
+              ? `${authorizedUser} - ${getTransactionDateForRender(date)}`
+              : getTransactionDateForRender(date)}
           </StyledSpan>
         </StyledRowContainer>
       </StyledColumnContainer>

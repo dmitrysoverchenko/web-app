@@ -41,9 +41,8 @@ const TransactionDetail = ({
       <StyledSpan>
         {selectedTransaction.date},{selectedTransaction.time}
       </StyledSpan>
-      <StyledBox disableGutters style={{ marginTop: "20px", padding: "15px" }}>
+      <StyledBox style={{ marginTop: "20px", padding: "15px" }}>
         <StyledColumnContainer
-        disableGutters
           style={{ backgroundColor: "#ffffff", width: "300px" }}
         >
           <StyledParagraph>{`${status}: ${selectedTransaction.status}`}</StyledParagraph>

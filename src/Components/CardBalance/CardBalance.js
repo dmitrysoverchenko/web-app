@@ -20,7 +20,7 @@ import {
   getCardBalanceValue,
   getAvailableBalance,
   getCurrentMonth,
-  calculateDailyPoints,
+  calculatePoints,
 } from "../../utils";
 
 const CardBalance = () => {
@@ -31,7 +31,7 @@ const CardBalance = () => {
     decimalPlaces
   );
   const currentMonth = getCurrentMonth();
-  const currentDailyPoints = "null";
+  const currentDailyPoints = calculatePoints();
   return (
     <StyledRowContainer
       disableGutters

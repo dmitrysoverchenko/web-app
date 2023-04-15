@@ -4,7 +4,6 @@ import { transactions } from "../../constants";
 import Transaction from "../Transaction";
 
 const LatestTransactions = ({
-  isTransactionDetailOpen,
   onTransactionClick,
   setSelectedTransaction,
 }) => {
