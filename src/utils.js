@@ -53,7 +53,7 @@ const getPoints = (dayNumber, prevPoints = 3, prevPrevPoints = 2) => {
 };
 
 export const calculatePoints = () => {
-  const date = moment("2023-12-04");
+  const date = moment();
   const dayOfYear = date.dayOfYear();
   const dayNumber = getSeasonDay(dayOfYear);
 
