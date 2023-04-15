@@ -1,0 +1,121 @@
+[
+  {
+    "type": "Credit",
+    "amount": "499.43",
+    "transactionName": "Apple",
+    "description": "Neque porro quisquam est",
+    "date": "04/14/2023",
+    "status": "Pending",
+    "authorizedUser": "John",
+    "tax": "2",
+    "id": "1",
+    "city": "Kyiv",
+    "time": "12:43"
+  },
+  {
+    "type": "Payment",
+    "amount": "793.57",
+    "transactionName": "Payment",
+    "description": "At vero eos et accusamus et",
+    "date": "04/13/2023",
+    "status": "Approved",
+    "id": "2",
+    "city": "Kyiv",
+    "time": "21:53"
+  },
+  {
+    "type": "Credit",
+    "amount": "1293.52",
+    "transactionName": "METRO",
+    "description": "But in certain circumstances and owing to the claims of duty",
+    "date": "04/11/2023",
+    "status": "Approved",
+    "tax": "2",
+    "id": "3",
+    "city": "Kharkiv",
+    "time": "10:22"
+  },
+  {
+    "type": "Credit",
+    "amount": "3.55",
+    "transactionName": "Lifecell",
+    "description": "Nor again is there anyone who loves or pursues ",
+    "date": "04/10/2023",
+    "status": "Approved",
+    "authorizedUser": "Jessica",
+    "tax": "3",
+    "id": "4",
+    "city": "Kharkiv",
+    "time": "16:03"
+  },
+  {
+    "type": "Credit",
+    "amount": "79.11",
+    "transactionName": "Pharmacy",
+    "description": "Nor again is there anyone who loves or pursues or desires",
+    "date": "04/7/2023",
+    "status": "Approved",
+    "tax": "3",
+    "id": "5",
+    "city": "Kyiv",
+    "time": "11:33"
+  },
+  {
+    "type": "Payment",
+    "amount": "23.72",
+    "transactionName": "Payment",
+    "description": "Et harum quidem rerum facilis est et expedita distinctio",
+    "date": "04/03/2023",
+    "status": "Approved",
+    "id": "6",
+    "city": "Kyiv",
+    "time": "17:17"
+  },
+  {
+    "type": "Payment",
+    "amount": "233.55",
+    "transactionName": "Payment",
+    "description": "Quis autem vel eum iure",
+    "date": "04/02/2023",
+    "status": "Approved",
+    "id": "7",
+    "city": "Kyiv",
+    "time": "19:42"
+  },
+  {
+    "type": "Credit",
+    "amount": "1002.00",
+    "transactionName": "Samsung",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem",
+    "date": "04/02/2023",
+    "status": "Approved",
+    "authorizedUser": "John",
+    "tax": "3",
+    "id": "8",
+    "city": "Kyiv",
+    "time": "12:33"
+  },
+  {
+    "type": "Credit",
+    "amount": "7.55",
+    "transactionName": "METRO",
+    "description": "But I must explain to you",
+    "date": "04/01/2023",
+    "status": "Approved",
+    "tax": "2",
+    "id": "9",
+    "city": "Kyiv",
+    "time": "18:21"
+  },
+  {
+    "type": "Payment",
+    "amount": "2443.29",
+    "transactionName": "Payment",
+    "description": "On the other hand",
+    "date": "04/01/2023",
+    "status": "Approved",
+    "id": "10",
+    "city": "Kyiv",
+    "time": "16:33"
+  }
+]
