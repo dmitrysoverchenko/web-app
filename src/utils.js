@@ -1,4 +1,5 @@
 import moment from "moment/moment";
+import { winterEnd, springEnd, summerEnd, autumnEnd } from "./constants";
 
 export const getCardBalanceValue = (cardLimit, decimalPlaces) =>
   (Math.random() * cardLimit).toFixed(decimalPlaces);
@@ -25,89 +26,36 @@ export const getTransactionDateForRender = (dateString) => {
 export const getRandomColor = () =>
   `#${Math.floor(Math.random() * 16777215).toString(16)}`;
 
-  export const calculatePoints = () => {
-    const date = new Date("2023-01-01");
-    const month = date.getMonth();
-    const day = date.getDate();
-  
-    let dayNumber = null;
-    let season = null;
-  
-    switch (month) {
-      case 0:
-        dayNumber = day + 31;
-        season = "Winter";
-        break;
-      case 1:
-        dayNumber = day + 31 + 31;
-        season = "Winter";
-        break;
-      case 2:
-        dayNumber = day;
-        season = "Spring";
-        break;
-      case 3:
-        dayNumber = day + 31;
-        season = "Spring";
-        break;
-      case 4:
-        dayNumber = day + 31 + 30;
-        season = "Spring";
-        break;
-      case 5:
-        dayNumber = day;
-        season = "Summer";
-        break;
-      case 6:
-        dayNumber = day + 30;
-        season = "Summer";
-        break;
-      case 7:
-        dayNumber = day + 30 + 31;
-        season = "Summer";
-        break;
-      case 8:
-        dayNumber = day;
-        season = "Fall";
-        break;
-      case 9:
-        dayNumber = day + 30;
-        season = "Fall";
-        break;
-      case 10:
-        dayNumber = day + 31 + 30;
-        season = "Fall";
-        break;
-      case 11:
-        dayNumber = day;
-        season = "Winter";
-        break;
-      default:
-        dayNumber = null;
-        season =  null;
-        break;
-    }
-  
-    let currentPoints = 0;
-  
-    if (dayNumber === 1) {
-      currentPoints = 2;
-    } else if (dayNumber === 2) {
-      currentPoints = 3;
-    } else {
-      let prevPrevPoints = 2;
-      let prevPoints = 3;
-  
-      for (let i = 3; i <= dayNumber; i++) {
-        currentPoints = Math.round(prevPoints * 1.0 + prevPrevPoints * 0.6);
-        prevPrevPoints = prevPoints;
-        prevPoints = currentPoints;
-      }
-  
-      if (currentPoints >= 1000) {
-        currentPoints = Math.floor(currentPoints / 1000) + "K";
-      }
-    }
-  
-    return currentPoints;
-  };
+const getSeasonDay = (dayOfYear) => {
+  if (dayOfYear <= winterEnd) {
+    return dayOfYear + 31;
+  }
+  if (dayOfYear <= springEnd) {
+    return dayOfYear - winterEnd;
+  }
+  if (dayOfYear <= summerEnd) {
+    return dayOfYear - springEnd;
+  }
+  if (dayOfYear <= autumnEnd) {
+    return dayOfYear - summerEnd;
+  }
+  return dayOfYear - autumnEnd;
+};
+
+const getPoints = (dayNumber, prevPoints = 3, prevPrevPoints = 2) => {
+  if (dayNumber === 1) {
+    return prevPoints >= 1000 ? `${Math.floor(prevPoints / 1000)}K` : prevPoints;
+  }
+
+  const newPoints = Math.round(prevPoints + prevPrevPoints * 0.6);
+
+  return getPoints(dayNumber - 1, newPoints, prevPoints);
+};
+
+export const calculatePoints = () => {
+  const date = moment("2023-12-04");
+  const dayOfYear = date.dayOfYear();
+  const dayNumber = getSeasonDay(dayOfYear);
+
+  return dayNumber === 1 ? 2 : dayNumber === 2 ? 3 : getPoints(dayNumber);
+};
