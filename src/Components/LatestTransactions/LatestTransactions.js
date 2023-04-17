@@ -27,6 +27,8 @@ const LatestTransactions = ({
     fetchData();
   }, []);
 
+  const sortedData = transactionsData.sort((a, b) => Date.parse(b.date) - Date.parse(a.date)).slice(0, 10);
+
   return (
     <StyledColumnContainer
       disableGutters
@@ -34,7 +36,7 @@ const LatestTransactions = ({
       style={{ marginTop: "0", padding: "10px" }}
     >
       <StyledTitle>{transactions}</StyledTitle>
-      {transactionsData.map((transaction, index) => (
+      {sortedData.map((transaction, index) => (
         <Transaction
           key={index}
           type={transaction.type}

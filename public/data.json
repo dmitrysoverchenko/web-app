@@ -1,7 +1,20 @@
 [
-  {
+    {
     "type": "Credit",
     "amount": "499.43",
+    "transactionName": "Sony",
+    "description": "On the other hand",
+    "date": "04/17/2023",
+    "status": "Pending",
+    "authorizedUser": "Sarah",
+    "tax": "2",
+    "id": "1",
+    "city": "Kyiv",
+    "time": "11:03"
+  },
+  {
+    "type": "Credit",
+    "amount": "999.99",
     "transactionName": "Apple",
     "description": "Neque porro quisquam est",
     "date": "04/14/2023",
